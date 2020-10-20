@@ -11,26 +11,32 @@ package main
 
 import "fmt"
 
+// Trumpeter ...
 type Trumpeter struct {
 	Name string
 }
 
+// Violinist ...
 type Violinist struct {
 	Name string
 }
 
+// Greetings ...
 func (t Trumpeter) Greetings() string {
 	return fmt.Sprintf("Greeting %s, The Trumpeter.", t.Name)
 }
 
+// Greetings ...
 func (v Violinist) Greetings() string {
 	return fmt.Sprintf("Greeting %s, The Violinist.", v.Name)
 }
 
+// MusicalPlayer ...
 type MusicalPlayer interface {
 	Greetings() string
 }
 
+// GreetMusicalPlayer ...
 func GreetMusicalPlayer(mp MusicalPlayer) {
 	fmt.Println(mp.Greetings())
 }
