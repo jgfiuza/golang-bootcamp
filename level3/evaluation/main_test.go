@@ -43,6 +43,8 @@ func TestFilterByAgeRangeTable(t *testing.T) {
 		testname := fmt.Sprintf("%v: from %v - to %v", idx, tt.fromAge, tt.toAge)
 		t.Run(testname, func(t *testing.T) {
 			result := filterByAgeRange(tt.fromAge, tt.toAge, ageSlice)
+
+			// then
 			assert.Equal(t, len(tt.want), len(result))
 			assert.True(t, reflect.DeepEqual(tt.want, result))
 		})
