@@ -1,10 +1,34 @@
 # golang Bootcamp
 
 - Level 1 - First steps and Basic stuff
+    - Installing and setting up Golang environment
+    - Package / Import / Export
+    - Types
+        - Numeric, Boolean, String, Array, Slice, Struct, Maps, Pointers
+    - Variables / Constants
+        - Short and long declaration
+        - iota type
+    - Control flow
+    - Functions vs Methods
+    - Pass-by-value vs pass-by-reference
+    - Error handling
+    - Defer, panic and recover
 - Level 2 - Interfaces
+    - Interfaces
+    - Type assertion
+    - Type switch
 - Level 3 - Testing
+    - Testing
+    - Benchmark
+    - Unit vs Integration vs E2E
+    - Testify
+    - Convey
 - Level 4 - Concurrency
     - Concurrency
     - Goroutine vs. Thread
     - Channels (buffered vs. unbuffered)
     - sync package
+- Level 5 - RESTful API and Microservices
+    - RESTful APIs
+    - Http packages: http, gorilla/mux, gorilla/handlers
+    - Microservices
