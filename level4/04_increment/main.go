@@ -7,19 +7,26 @@
 
 package main
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+	"time"
+)
 
-type number struct {
-	value int
-	mux   *sync.Mutex
-}
-
-func (n *number) increase(ch chan int) {
-	n.mux.Lock()
-	defer n.mux.Unlock()
-	ch <- n.value
+func increase(num *int, mutex *sync.Mutex) {
+	mutex.Lock()
+	defer mutex.Unlock()
+	*num++
 }
 
 func main() {
+	var number int
+	mutex := &sync.Mutex{}
+
+	for i := 1; i <= 1000; i++ {
+		go increase(&number, mutex)
+	}
+	time.Sleep(2 * time.Second)
+	fmt.Printf("%v\n", number)
 
 }
