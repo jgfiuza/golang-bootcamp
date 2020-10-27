@@ -9,13 +9,14 @@ import (
 )
 
 var (
-	port      = ":8000"
+	port = ":8000"
 )
 
 // Start the application and load resources
 func Start() {
+	router := loadRouter()
 	log.Printf("Starting web api on port %s", port)
-	log.Fatal(http.ListenAndServe(port, loadRouter()))
+	log.Fatal(http.ListenAndServe(port, router))
 }
 
 func loadRouter() *mux.Router {
